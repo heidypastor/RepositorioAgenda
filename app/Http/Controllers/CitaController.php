@@ -42,6 +42,7 @@ class CitaController extends Controller
             $name = time().$file->getClientOriginalName();
             $file->move(public_path()."/images/",$name);
         }
+        
         $fecha = new Cita();
         $fecha->fecha = $request->input("fecha");
         $fecha->Usuario = $name;
