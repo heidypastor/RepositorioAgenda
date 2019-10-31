@@ -13,7 +13,7 @@ class CitaController extends Controller
      */
     public function index()
     {
-        //
+        return "Controlador resource de citas";
     }
 
     /**
@@ -23,7 +23,7 @@ class CitaController extends Controller
      */
     public function create()
     {
-        //
+        return view("Citas.create");
     }
 
     /**
@@ -34,7 +34,8 @@ class CitaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $fecha = $request->input("fecha");
+        return $fecha;
     }
 
     /**
