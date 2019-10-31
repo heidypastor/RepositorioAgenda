@@ -23,6 +23,7 @@ class CitaController extends Controller
      */
     public function create()
     {
+        $
         return view("Citas.create");
     }
 
@@ -34,8 +35,10 @@ class CitaController extends Controller
      */
     public function store(Request $request)
     {
-        $fecha = $request->input("fecha");
-        return $fecha;
+        $fecha = new Cita();
+        $fecha->fecha = $request->input("fecha");
+        $fecha->save();
+        return "La fecha a sido guardada";
     }
 
     /**
