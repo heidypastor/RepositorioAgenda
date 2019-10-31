@@ -2,6 +2,7 @@
 
 namespace Ensayo\Http\Controllers;
 
+use Ensayo\Cita;
 use Illuminate\Http\Request;
 
 class CitaController extends Controller
@@ -13,7 +14,9 @@ class CitaController extends Controller
      */
     public function index()
     {
-        return "Controlador resource de citas";
+        $citas = Cita::all();
+
+        return view("Citas.index", compact("citas"));
     }
 
     /**
@@ -23,7 +26,6 @@ class CitaController extends Controller
      */
     public function create()
     {
-        $
         return view("Citas.create");
     }
 
