@@ -37,10 +37,16 @@ class CitaController extends Controller
      */
     public function store(Request $request)
     {
+        if($request->hasFile("Usuario")){
+            $file = $request->file("Usuario");
+            $name = time().$file->getClientOriginalName();
+            $file->move(public_path()."/images/",$name);
+        }
         $fecha = new Cita();
         $fecha->fecha = $request->input("fecha");
+        $fecha->Usuario = $name;
         $fecha->save();
-        return "La fecha a sido guardada";
+        return "Los datos han sido guardados";
     }
 
     /**
