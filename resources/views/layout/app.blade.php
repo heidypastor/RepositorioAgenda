@@ -7,6 +7,7 @@
 <body>
 	<nav class="navbar navbar-dark bg-primary">
 		<a href="#" class="navbar-brand">Agenda Virtual</a>
+		<a href="/Cita/create" class="pull-right btn btn-success">Crear Cita</a>
 	</nav>
 	<div class="container">
 		@yield("content")
