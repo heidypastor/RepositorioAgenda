@@ -49,7 +49,7 @@ class CitaController extends Controller
         $fecha->Usuario = $name;
         $fecha->slug = $name.now();
         $fecha->save();
-        return "Los datos han sido guardados";
+        return redirect()->route("Cita.index");
     }
 
     /**
@@ -98,7 +98,7 @@ class CitaController extends Controller
             $file->move(public_path()."/images/",$name);
         }
         $cita->save();
-        return "Cita actualizada correctamente";
+        return redirect()->route("Cita.show", [$cita->slug]);
     }
 
     /**
@@ -111,8 +111,8 @@ class CitaController extends Controller
     {
         $cita = Cita::where("slug","=",$slug)->firstOrFail();
         $file_path = public_path()."/images/".$cita->usuario;
-        File::delete($file_path);
+        unlink($file_path);
         $cita->delete();
-        return "Cita eliminada";
+        return redirect()->route("Cita.index");;
     }
 }
