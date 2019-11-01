@@ -4,15 +4,11 @@
 
 @section("content")
 	<form class="form-group" method="POST" action="/Cita" enctype="multipart/form-data">
-		@csrf
-			<div class="form-group">
-					<label for="">Fecha de la Cita</label>
-					<input type="date" name="fecha" class="form-control">
-			</div>
-			<div class="form-group">
-					<label for="">Usuario - Icono</label>
-					<input type="file" name="Usuario">
-			</div>
-			<button type="submit" class="btn btn-primary">Guardar</button>
+		@if(isset($cita))
+			@include("Citas.form")
+		@else
+			@include("Citas.form2")
+		@endif
+			<button type="submit" class="btn btn-primary">Crear</button>
 	</form>
 @endsection

@@ -88,7 +88,14 @@ class CitaController extends Controller
     public function update(Request $request, $slug)
     {
         $cita = Cita::where("slug","=",$slug)->firstOrFail();
-        $cita->fill($request->all());
+        //$cita->fill($request->except("usuario"));
+        $cita->fecha = $request->input("fecha");
+        if($request->hasFile("Usuario")){
+            $file = $request->file("Usuario");
+            $name = time().$file->getClientOriginalName();
+            $cita->usuario = $name;
+            $file->move(public_path()."/images/",$name);
+        }
         $cita->save();
         return "Cita actualizada correctamente";
     }
