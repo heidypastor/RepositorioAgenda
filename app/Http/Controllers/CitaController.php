@@ -42,10 +42,11 @@ class CitaController extends Controller
             $name = time().$file->getClientOriginalName();
             $file->move(public_path()."/images/",$name);
         }
-        
+
         $fecha = new Cita();
         $fecha->fecha = $request->input("fecha");
         $fecha->Usuario = $name;
+        $fecha->slug = $name.now();
         $fecha->save();
         return "Los datos han sido guardados";
     }
@@ -56,9 +57,11 @@ class CitaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Cita $cita)
     {
-        //
+        // $cita = Cita::where("slug","=",$slug)->firstOrFail();
+
+        return view("Citas.show", compact("cita"));
     }
 
     /**
