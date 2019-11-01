@@ -2,8 +2,8 @@
 
 namespace Ensayo\Http\Controllers;
 
-use Ensayo\Cita;
 use Illuminate\Http\Request;
+use Ensayo\Cita;
 
 class CitaController extends Controller
 {
@@ -57,10 +57,10 @@ class CitaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Cita $cita)
+    public function show($slug)
     {
-        // $cita = Cita::where("slug","=",$slug)->firstOrFail();
-
+        $cita = Cita::where("slug","=",$slug)->firstOrFail();
+    
         return view("Citas.show", compact("cita"));
     }
 
@@ -70,9 +70,12 @@ class CitaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($slug)
     {
-        //
+        $cita = Cita::where("slug","=",$slug)->firstOrFail();
+
+        return view("Citas.edit", compact("cita"));
+
     }
 
     /**
@@ -82,9 +85,12 @@ class CitaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $slug)
     {
-        //
+        $cita = Cita::where("slug","=",$slug)->firstOrFail();
+        $cita->fill($request->all());
+        $cita->save();
+        return "Cita actualizada correctamente";
     }
 
     /**

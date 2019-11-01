@@ -8,6 +8,8 @@
 	<div class="text-center">
 		<h5 class="card-title">{{$cita->fecha}}</h5>
 		<p>Futura descripción de la cita</p>
+		<a href="/Cita/{{$cita->slug}}/edit" class="btn btn-primary">Editar</a>
 	</div>
+
 
 @endsection

@@ -17,4 +17,5 @@ Route::get('/', function () {
 
 Route::get('/Bienvenida/{Bienvenida}', "EnsayoController@Bienvenida");
 
-Route::resource('/Citas', "CitaController"); 
+Route::resource('/Cita', "CitaController");
+//Route::get('/Citas/{slug}', "CitaController@show");

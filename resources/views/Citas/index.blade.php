@@ -11,7 +11,7 @@
 					  <div class="card-body">
 					    <h5 class="card-title">{{$cita->fecha}}</h5>
 					    <p class="card-text">Futura descripción de la cita</p>
-					    <a href="/Citas/{{$cita->slug}}" class="btn btn-primary">Recordatorios...</a>
+					    <a href="/Cita/{{$cita->slug}}" class="btn btn-primary">Recordatorios...</a>
 					  </div>
 					</div>
 				</div>

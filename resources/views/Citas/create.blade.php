@@ -3,7 +3,7 @@
 @section("Title","Citas")
 
 @section("content")
-	<form class="form-group" method="POST" action="/Citas" enctype="multipart/form-data">
+	<form class="form-group" method="POST" action="/Cita" enctype="multipart/form-data">
 		@csrf
 			<div class="form-group">
 					<label for="">Fecha de la Cita</label>
