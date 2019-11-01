@@ -9,6 +9,11 @@
 		<h5 class="card-title">{{$cita->fecha}}</h5>
 		<p>Futura descripción de la cita</p>
 		<a href="/Cita/{{$cita->slug}}/edit" class="btn btn-primary">Editar</a>
+		<form class="form-group" method="POST" action="/Cita/{{$cita->slug}}">
+			@csrf
+			@method("DELETE")
+			<button type="submit" class="btn btn-danger">Eliminar</button>
+		</form>
 	</div>
 
 

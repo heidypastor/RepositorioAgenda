@@ -4,6 +4,7 @@ namespace Ensayo\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Ensayo\Cita;
+use Ensayo\Http\Requests\StoreCitaRequest;
 
 class CitaController extends Controller
 {
@@ -35,7 +36,7 @@ class CitaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreCitaRequest $request)
     {
         if($request->hasFile("Usuario")){
             $file = $request->file("Usuario");
@@ -106,8 +107,12 @@ class CitaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($slug)
     {
-        //
+        $cita = Cita::where("slug","=",$slug)->firstOrFail();
+        $file_path = public_path()."/images/".$cita->usuario;
+        File::delete($file_path);
+        $cita->delete();
+        return "Cita eliminada";
     }
 }
