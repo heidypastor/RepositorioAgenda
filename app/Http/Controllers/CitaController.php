@@ -10,8 +10,9 @@ class CitaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        $request->user()->authorizeRoles(['admin','user']);
         $citas = Cita::all();
         return view("Citas.index", compact("citas"));
     }
