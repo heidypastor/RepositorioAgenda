@@ -1,22 +1,18 @@
 <?php
 
 namespace Ensayo\Http\Controllers;
-
+use Ensayo\Recordatorio;
 use Illuminate\Http\Request;
 
 class RecordatorioController extends Controller
 {
     public function index(Request $request){
     	if($request->ajax()){
-    		return response()->json([
-    			['id' => 1, 'name' => "Documentos"],
-    			['id' => 2, 'name' => "Hora"],
-    			['id' => 3, 'name' => "Llevar"]
-    		]);
+            $recordatorios = recordatorio::all();
+    		return response()->json($recordatorios, 200);
     	}
     	return view('recordatorios.index');
     }
-
     public function store(Request $request){
     	if($request->ajax()){
     		$recordatorio = new Recordatorio();
