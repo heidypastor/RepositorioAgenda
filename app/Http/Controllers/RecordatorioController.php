@@ -8,11 +8,12 @@ class RecordatorioController extends Controller
 {
     public function index(Request $request){
     	if($request->ajax()){
-            $recordatorios = recordatorio::all();
+            $recordatorios = Recordatorio::all();
     		return response()->json($recordatorios, 200);
     	}
     	return view('recordatorios.index');
     }
+
     public function store(Request $request){
     	if($request->ajax()){
     		$recordatorio = new Recordatorio();

@@ -49993,7 +49993,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 	methods: {
 		saveRecordatorio: function saveRecordatorio() {
-			axios.post('http://ensayo.test/recordatorios', {
+			axios.post('http://127.0.0.1:8000/recordatorios', {
 				name: this.name,
 				picture: this.picture
 			}).then(function (res) {

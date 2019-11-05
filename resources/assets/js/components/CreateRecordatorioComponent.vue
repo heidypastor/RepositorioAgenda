@@ -36,7 +36,7 @@
 		},
 		methods: {
 			saveRecordatorio: function(){
-				axios.post('http://ensayo.test/recordatorios',{
+				axios.post('http://127.0.0.1:8000/recordatorios',{
 					name: this.name,
 					picture: this.picture
 				})
@@ -46,7 +46,7 @@
 				})
 				.catch(function(err){
 					console.log(err)
-				})
+				});
 			}
 		}
 	}
