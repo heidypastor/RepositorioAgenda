@@ -86,7 +86,7 @@ class CitaController extends Controller
             $file->move(public_path()."/images/",$name);
         }
         $cita->save();
-        return redirect()->route("Cita.show", [$cita->slug]);
+        return redirect()->route("Cita.show", [$cita->slug])->with('status','Cita actualizada correctamente');
     }
     /**
      * Remove the specified resource from storage.
