@@ -16,6 +16,8 @@ window.Vue = require('vue');
  */
 
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
+Vue.component('recordatorios-component', require('./components/RecordatoriosComponent.vue'));
+Vue.component('spinner', require('./components/Spinner.vue'));
 
 const app = new Vue({
     el: '#app'

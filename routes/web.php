@@ -18,6 +18,8 @@ Route::get('/', function () {
 Route::get('/Bienvenida/{Bienvenida}', "EnsayoController@Bienvenida");
 
 Route::resource('/Cita', "CitaController");
+Route::resource('recordatorios', 'RecordatorioController');
+
 //Route::get('/Citas/{slug}', "CitaController@show");
 Auth::routes();
 
@@ -30,3 +32,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+

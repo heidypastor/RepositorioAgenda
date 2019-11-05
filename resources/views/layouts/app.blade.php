@@ -59,7 +59,7 @@
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
-
+                                    <a href="/Cita" class="btn btn-default">Lista de citas</a>
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
@@ -71,7 +71,7 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class="container">
             @yield('content')
         </main>
     </div>
