@@ -15,11 +15,10 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example-component', require('./components/ExampleComponent.vue'));
-Vue.component('recordatorios-component', require('./components/RecordatoriosComponent.vue'));
-Vue.component('add-recordatorio-btn', require('./components/AddRecordatorioComponent.vue'));
-Vue.component('create-form-recordatorio', require('./components/CreateRecordatorioComponent.vue'));
-Vue.component('spinner', require('./components/Spinner.vue'));
+Vue.component('list-of-recordatorios', require('./components/Recordatorios/list.vue'));
+Vue.component('modal-button', require('./components/Recordatorios/modal-button.vue'));
+Vue.component('create-form-recordatorio', require('./components/Recordatorios/Add.vue'));
+Vue.component('spinner', require('./components/widgets/Spinner.vue'));
 const app = new Vue({
     el: '#app'
 });

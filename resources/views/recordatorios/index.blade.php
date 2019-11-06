@@ -1,6 +1,6 @@
 @extends('layouts.app')
 	@section('content')
-	<add-recordatorio-btn></add-recordatorio-btn>
-	<recordatorios-component></recordatorios-component>
+	<modal-button></modal-button>
+	<list-of-recordatorios></list-of-recordatorios>
 	<create-form-recordatorio></create-form-recordatorio>
 	@endsection

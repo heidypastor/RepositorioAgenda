@@ -36,13 +36,16 @@
 		},
 		methods: {
 			saveRecordatorio: function(){
-				axios.post('http://127.0.0.1:8000/recordatorios',{
+				// console.log(this.name)
+				// console.log(this.picture)
+				axios.post('http://ensayo.test/recordatorios',{
 					name: this.name,
 					picture: this.picture
 				})
 				.then(function(res){
 					console.log(res)
-					$('addRecordatorio').modal('hide')
+					$('#addRecordatorio').modal('hide')
+					//EventBus.$emit('recordatorio-added', res.data.recordatorio)
 				})
 				.catch(function(err){
 					console.log(err)
