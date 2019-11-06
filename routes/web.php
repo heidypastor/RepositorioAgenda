@@ -18,7 +18,10 @@ Route::get('/', function () {
 Route::get('/Bienvenida/{Bienvenida}', "EnsayoController@Bienvenida");
 
 Route::resource('/Cita', "CitaController");
-Route::resource('recordatorios', 'RecordatorioController');
+
+//Route::resource('recordatorios', 'RecordatorioController');
+
+Route::post('Cita/{Cita}/recordatorios','RecordatorioController@store');
 
 //Route::get('/Citas/{slug}', "CitaController@show");
 Auth::routes();

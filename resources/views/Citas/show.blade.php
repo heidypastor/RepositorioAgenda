@@ -15,4 +15,6 @@
 			<button type="submit" class="btn btn-danger">Eliminar</button>
 		</form>
 	</div>
+	<modal-button></modal-button>
+	<create-form-recordatorio></create-form-recordatorio>
 @endsection

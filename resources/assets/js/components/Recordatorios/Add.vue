@@ -38,7 +38,11 @@
 			saveRecordatorio: function(){
 				// console.log(this.name)
 				// console.log(this.picture)
-				axios.post('http://ensayo.test/recordatorios',{
+				let currentRoute = window.location.pathname;
+				// let cosa = `http://ensayo.test${currentRoute}/recordatorios`;
+				// console.log(cosa);
+
+				axios.post(`http://ensayo.test${currentRoute}/recordatorios`,{
 					name: this.name,
 					picture: this.picture
 				})
@@ -48,6 +52,7 @@
 					//EventBus.$emit('recordatorio-added', res.data.recordatorio)
 				})
 				.catch(function(err){
+					//console.log(currentRoute)
 					console.log(err)
 				});
 			}
