@@ -69,10 +69,11 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/home') }}">Home</a>
+                        <a href="http://ensayo.test/Cita">Home</a>
+                        {{-- {{ url('/home') }} --}}
                     @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
+                        <a href="{{ route('login') }}">Iniciar Sesión</a>
+                        <a href="{{ route('register') }}">Registrarse</a>
                     @endauth
                 </div>
             @endif
@@ -83,8 +84,15 @@
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Citas</a>
-                    <a href="https://laracasts.com">Recordatorios...</a>
+                    @if (session_start())
+                        @auth
+                            <a href="http://ensayo.test/Cita">Citas</a>
+                        @else
+                            <a href="http://ensayo.test/login">Citas</a>    
+                        @endauth
+                    @endif
+                    {{-- <a href="http://ensayo.test/login">Citas</a>
+                    <a href="http://ensayo.test/login">Recordatorios</a> --}}
                 </div>
             </div>
         </div>
