@@ -49484,7 +49484,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 	mounted: function mounted() {
 		var _this = this;
 
-		axios.get('http://ensayo.test/recordatorios').then(function (res) {
+		var currentRoute = window.location.pathname;
+		axios.get("http://ensayo.test" + currentRoute + "/recordatorios").then(function (res) {
+			console.log(res);
 			_this.recordatorios = res.data;
 			_this.loading = false;
 		});

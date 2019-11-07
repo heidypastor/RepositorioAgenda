@@ -17,4 +17,5 @@
 	</div>
 	<modal-button></modal-button>
 	<create-form-recordatorio></create-form-recordatorio>
+	<list-of-recordatorios></list-of-recordatorios>
 @endsection

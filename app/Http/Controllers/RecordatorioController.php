@@ -7,10 +7,10 @@ use Illuminate\Http\Request;
 
 class RecordatorioController extends Controller
 {
-    public function index(Request $request){
+    public function index($slug, Request $request){
+        $cita = Cita::where("slug","=",$slug)->firstOrFail();
     	if($request->ajax()){
-            $recordatorios = recordatorio::all();
-    		return response()->json($recordatorios, 200);
+    		return response()->json($cita->recordatorios, 200);
     	}
     	return view('recordatorios.index');
     }

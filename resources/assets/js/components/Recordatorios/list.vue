@@ -23,9 +23,11 @@
 			}
 		},
 		mounted() {
+			let currentRoute = window.location.pathname;
             axios
-            	.get('http://ensayo.test/recordatorios')
+            	.get(`http://ensayo.test${currentRoute}/recordatorios`)
             	.then((res) => {
+            		console.log(res)
             		this.recordatorios = res.data
             		this.loading = false
             	});

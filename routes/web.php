@@ -21,6 +21,8 @@ Route::resource('/Cita', "CitaController");
 
 //Route::resource('recordatorios', 'RecordatorioController');
 
+Route::get('Cita/{Cita}/recordatorios','RecordatorioController@index');
+
 Route::post('Cita/{Cita}/recordatorios','RecordatorioController@store');
 
 //Route::get('/Citas/{slug}', "CitaController@show");
@@ -28,13 +30,13 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Auth::routes();
+//Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
 
-Auth::routes();
+//Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
 
 //Route::post('/recordatorios', 'RecordatorioController@store');
 
