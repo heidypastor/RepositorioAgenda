@@ -19,4 +19,7 @@ class Cita extends Model
     {
         return 'slug';
     }
+    public function recordatorios(){
+        return $this->hasMany('Ensayo\Recordatorio');
+    }
 }
